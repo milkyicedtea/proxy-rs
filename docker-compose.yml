@@ -1,0 +1,11 @@
+services:
+  proxy-rs:
+    build: .
+    image: milkyicedtea/proxy-rs
+    container_name: proxy-rs
+    env_file: .env
+    ports:
+      - "25565:25565"
+    restart: unless-stopped
+
+# i would add caddy but i don't understand caddy-l4 :P
