@@ -1,0 +1,10 @@
+# This should be in you main block - only works with https://github.com/mholt/caddy-l4
+{
+	layer4 {
+		:25565 {
+			route {
+				proxy proxy-rs:25565
+			}
+		}
+	}
+}

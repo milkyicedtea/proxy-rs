@@ -1,0 +1,3 @@
+[backends]
+"fake.domain.com" = { host = "myhost.com", port = 25570 }
+"unreal.domain.com" = { host = "mycontainer", port = 25571} # remember to add network to docker-compose.yml!
