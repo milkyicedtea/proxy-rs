@@ -4,8 +4,17 @@ services:
     image: milkyicedtea/proxy-rs
     container_name: proxy-rs
     env_file: .env
-    ports:
-      - "25565:25565"
+    expose:
+      - "25565"
+    #ports:
+    #  - "25565:25565"
     restart: unless-stopped
+    networks:
+      - caddy_net
+    volumes:
+      - ./config.toml:/app/config.toml
 
-# i would add caddy but i don't understand caddy-l4 :P
+# i would add caddy but i don't understand caddy-l4 :P (i'm trying)
+networks:
+  caddy_net:
+    external: true

@@ -34,6 +34,7 @@ RUN cargo build --release
 FROM debian:bookworm-slim
 WORKDIR /app
 
+# copy binary
 COPY --from=builder /app/target/release/proxy-rs /usr/local/bin/proxy-rs
 
 EXPOSE 25565
